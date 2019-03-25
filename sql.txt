@@ -1,0 +1,36 @@
+D. SQL
+
+I.
+
+1. Q: What is the output of the SELECT statement?
+A:
+STATION:
+ID		CITY		STATE
+44		Denver		CO
+66		Caribou		ME
+
+
+II. 
+Orders:
+OrderID 	CustomerID 	OrderDate
+10308 	              2 	1997-09-17
+10309 	              37 	1998-09-18
+10310 	              77 	1999-09-21
+
+Customers:
+CustomerID 	CustomerName 	        ContactName 	Country
+1 	        Amith Pulla      	Franz Muller 	Germany
+2 	        Charlomein Dos	        Francisco 	Mexico
+3 	        Antonio Gusto 	        Jay Munoz 	Mexico
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID; 
+
+1. Q: What is the output of the SELECT statement?
+   A:
+	
+Orders:
+OrderID		CustomerName		OrderDate
+Caribou		Charlomein Dos		1997-09-17
