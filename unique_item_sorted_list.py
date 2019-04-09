@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+
+
+
 class MyArrayProcessing:
     def  whatAmIdoing(self,input):
         """
