@@ -1,1 +1,93 @@
-TODO
+
+' File: test.vbs
+'
+
+Option Explicit
+
+const MINVALUE = 0
+const MAXVALUE = 1000
+
+dim a(20)                  
+
+Randomize
+
+call startIt(a, MINVALUE, MAXVALUE) 'test setup for doSomething
+
+call takaAlook(a, "takeAlook1")     'inspect the test setup
+
+call doSomething(a)                 'do something
+
+call takeAlook(a, "takeAlook2")     'pass/fail of doSomething?
+
+
+'----------------------------------------------------------------------------
+'
+' 
+SUB doSomething(ByRef a())
+   dim pass                               '
+   dim done                               ' 
+   dim i, temp
+
+   pass = 0
+   done = FALSE
+
+   while not done 
+      done = TRUE                      
+
+      for i = UBound(a) to pass+1 step -1
+         if a(i) < a(i-1) then
+            temp = a(i)                     
+            a(i) = a(i-1)
+            a(i-1) = temp
+            done = FALSE                
+         end if
+      next
+      pass = pass + 1
+   wend
+
+end SUB
+
+'----------------------------------------------------------------------------
+' 
+SUB takeAlook(ByRef myA, ByRef description)
+   dim output, i
+   output = ""
+   for i = 0 to UBound(myA)
+      output = output & "myA(" & i & ") = " & myA(i) & vbNewLine
+   next
+
+   MsgBox output, ,description
+end SUB
+
+'----------------------------------------------------------------------------
+'
+FUNCTION giveMeSomething(ByVal min, ByVal max)
+   giveMeSomething = CInt( ((max - min + 1) * Rnd) + min)
+end FUNCTION
+
+'----------------------------------------------------------------------------
+'
+SUB startIt(ByRef a, ByRef minValue, ByRef maxValue)
+   dim index
+   for index = 0 to UBound(a)
+      a(index) = giveMeSomething(minValue, maxValue)
+   next
+end SUB
+
+'-------------------------------------------------------------------------------
+
+1. Q: What is "doSomething" doing?
+   A: It is basically doing a bubble sort on a given list.
+
+2. Q: What particular testing method is employed in the code, i.e, what are startIt and takeAlook doing?
+   A: Unit testing method is employd in the code where "startIt" does the 
+   setUp for test data and "takeAlook" does the validation of the test case.
+
+3. Q: Which functional test cases would you try for the SUB doSomething?
+   A: 1) Performing bubble sort with negative values
+      2) Using an empty list as input for this function
+      3) Testing with larger list size to test memory and algorithm
+      efficiency.
+
+4. Q: Implement 2 of the test case in 3).
+   A: TODO
