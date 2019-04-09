@@ -80,7 +80,7 @@ end SUB
    A: It is basically doing a bubble sort on a given list.
 
 2. Q: What particular testing method is employed in the code, i.e, what are startIt and takeAlook doing?
-   A: Unit testing method is employd in the code where "startIt" does the 
+   A: Unit testing method is employd in the code where "startIt" does the
    setUp for test data and "takeAlook" does the validation of the test case.
 
 3. Q: Which functional test cases would you try for the SUB doSomething?
@@ -91,3 +91,11 @@ end SUB
 
 4. Q: Implement 2 of the test case in 3).
    A: TODO
+
+import unittest
+
+class TestBubbleSort(unittest.TestCase):
+    def test_01_list_with_negative_values(self):
+        pass
+    def test_02_list_if_empty(self):
+        pass
