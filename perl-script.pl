@@ -37,14 +37,42 @@ foreach my $str (sort keys %count)
    			(ii) iterating through each line
    			(iii) splitting each line on strings
    			(iv) prints the overall counts of each string in the given file
+   			in a sorted way.
 
 2. Q: Comment each line describing its function.
    A: Commented.
 
 3. Q: Which functional test cases would you design to test the script above?
-   A: Will update.
+   A: 1) File does not exist and validate whether an exception is raised
+      2) File exists but the text in the file is empty
+      3) File exists and the text has equal number of words (all counts are
+      equal)
+      4) File exists and the text has digits as well apart from string words
+
 
 4. Q: Implement 2 of the test case in 3) in Perl or scripting of your choice.
-   A: Will implement in python
+   A: Please find the below test cases
 
 """
+
+
+import unittest
+
+class TestFileWordCounts(self):
+    """let us say the above perl function is wrapped in a python function"""
+     """called get_word_counts"""
+
+    def test_01_file_does_not_exist(self):
+        test_data = "random_file.txt"
+        with self.assertRaises(FileNotFoundError) as exe:
+            sorted_word_counts = get_word_counts("some_missing_file_name")
+        actual_exception = str(exe.exception)
+        assert "Could not open" in actual_exception
+
+    def test_02_file_exists_but_file_is_empty(self):
+        """as the file is empty the sorted word counts dict will be empty"""
+        test_data = "some_existing_file.txt"
+        sorted_word_counts_dict = get_word_counts("some_missing_file_name")
+        assert {} is sorted_word_counts_dict
+        
+        
