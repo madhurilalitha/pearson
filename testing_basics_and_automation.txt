@@ -1,1 +1,14 @@
-TODO
+Consider www.google.com's search box and the Google Search button. ---- In progress
+
+1. Q: How would you test this functionality?
+   A:
+      1) Validate whether relevant results are returned for a given keyword.
+      2) Validate whether a multiple words search results the most relevant results
+      3) Validate whether a relevant results are returned when searched with digits.
+      4) Validate whether the google search button and google search box are displayed in the expected colors and expected sizes
+      5) Validate how responsive is the webbrowser when user clicks on search, i.e user is able to get the response in required sla.
+      6) Verify the google search functionality works on diffeent browsers like IE, Chrome and Firefox (browser compatibility testing).
+      
+2. How would you design test automation for google's search functionality?
+
+    Using Selenium WebDriver framework, by fetching the web elements by FindElements(By…) and storing them in an array/list for matching the expected data.
