@@ -10,6 +10,8 @@ Consider www.google.com's search box and the Google Search button.
       6) Verify the google search functionality works on different browsers like IE, Chrome and Firefox (browser compatibility testing).
       7) Validate whether too long word on google search appears the valid suggestion to try again.(did not match any document, try using            small word)
       8) Validate whether prononuciation word search results in relevant audio clippings.
+      9) Verify that misspelled keyword should get corrected and response corresponding to the correct keyword should get displayed.
+      10) Verify that total number of results fetched for a keyword
       
       
 2. How would you design test automation for google's search functionality?
