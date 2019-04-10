@@ -1,4 +1,4 @@
-Consider www.google.com's search box and the Google Search button. ---- In progress- will add more points
+Consider www.google.com's search box and the Google Search button.
 
 1. Q: How would you test this functionality?
    A:
@@ -7,7 +7,10 @@ Consider www.google.com's search box and the Google Search button. ---- In progr
       3) Validate whether a relevant results are returned when searched with digits.
       4) Validate whether the google search button and google search box are displayed in the expected colors and expected sizes
       5) Validate how responsive is the webbrowser when user clicks on search, i.e user is able to get the response in required sla.
-      6) Verify the google search functionality works on diffeent browsers like IE, Chrome and Firefox (browser compatibility testing).
+      6) Verify the google search functionality works on different browsers like IE, Chrome and Firefox (browser compatibility testing).
+      7) Validate whether too long word on google search appears the valid suggestion to try again.(did not match any document, try using            small word)
+      8) Validate whether prononuciation word search results in relevant audio clippings.
+      
       
 2. How would you design test automation for google's search functionality?
 
